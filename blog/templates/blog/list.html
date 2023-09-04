@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"
+    type="text/css"
+    href="../../static/css/listDesign.css"
+    >
+    <title>Title</title>
+</head>
+<body>
+
+<ol style="--length: {{ posts.count }}" role="list">
+    {% for post in posts%}
+        <li style="--i: {{ forloop.counter }}">
+        <h3>
+
+        <a href="{% url 'post_detail' post.slug %}">{{ post }}</a>
+        </h3>
+        <p>{{ post.description | truncatewords:20 }}</p>
+        </li>
+    {% endfor %}
+    </ol>
+
+<div style="text-align:center;">
+    <a href="{% url 'categories'  %}">
+        <button style="background-color: black; color: white; font-size: 20px; padding: 10px 20px;">Category</button>
+    </a>
+</div>
+
+</body>
+</html>

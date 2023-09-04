@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"
+    type="text/css"
+    href="../../static/css/detailStyle.css"
+    >
+    <title>Title</title>
+</head>
+<body>
+        <div class="post">
+    <h2>{{ post_dict.title }}</h2>
+    <p class="description">{{ post_dict.description }}</p>
+    <div class="details">
+        <p class="author">Author: {{ post_dict.author }}</p>
+        <p class="views">Views: {{ post_dict.views }}</p>
+        <p class="published-date">Published at: {{ post_dict.date_published }}</p>
+    </div>
+</div>
+
+
+
+
+<div style="text-align:center;">
+    <a href="{% url 'post_list' post.category.slug %}">
+        <button style="background-color: black; color: white; font-size: 20px; padding: 10px 20px;">Post List</button>
+    </a>
+</div>
+
+</body>
+</html>
