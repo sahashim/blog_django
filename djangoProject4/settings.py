@@ -161,10 +161,11 @@ EMAIL_HOST_PASSWORD = 'vjiidbqmztxdtrci'# Replace with your email password
 
 # CELERY SETTINGS :
 CELERY: object
-CELERY_BROKER_URL = 'redis://localhost:6379'
-CELERY_RESULT_BACKEND = CELERY_BROKER_URL
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
 CELERY_ACCEPT_CONTENT = {'application/json'}
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = TIME_ZONE
 CELERY_DEFAULT_QUEUE = 'default'
+CELERY_LOG_LEVEL = 'DEBUG'

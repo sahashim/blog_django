@@ -27,7 +27,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     bio = models.TextField()
     age = models.PositiveIntegerField(null=True)
     image = models.ImageField(upload_to='users/images/')
-    otp = models.CharField(max_length=6)
+    otp = models.CharField(max_length=6,null=True)
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ['first_name','last_name','age','bio','education','image']
     objects = CustomUserManager()
