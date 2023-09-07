@@ -16,6 +16,7 @@ urlpatterns = [
     path('register/', RegisterView.as_view(), name='register_user'),
     path('login-with-otp/',LoginWithOTP.as_view(),  name='login-with-otp'),
     path('validate-otp/', ValidateOTP.as_view(), name='validate-otp'),
+    path('validate-otp-task/', check_validate_task.as_view(), name='check_validate_task'),
     path('edit-info/<int:pk>/', EditView.as_view(), name='edit_user'),
     path('change_password/<int:pk>/', ChangePasswordView.as_view(), name='auth_change_password'),
 ]

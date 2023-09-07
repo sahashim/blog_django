@@ -40,9 +40,13 @@ def validate_otp_task(email,otp):
         user.otp = None
         user.save()
         token = get_token_for_user(user)
-        return {'token': token}
+        refresh = token['refresh']
+        access = token['access']
+        return {'refresh':refresh,'access':access, 'status':200}
     else:
         return {'error': 'Invalid OTP.task'}
+
+
 
 
 
@@ -55,6 +59,7 @@ def validate_otp_task(email,otp):
 def register_user(data):
     print('here222222')
     try:
+            image_data = base64.b64decode(data['image'])
             user = CustomUser.objects.create_user(
                 email=data['email'],
                 password=data['password'],
@@ -63,7 +68,7 @@ def register_user(data):
                 age=data['age'],
                 education=['education'],
                 bio=data['bio'],
-                image=data['image']
+                image=image_data
             )
             return {'message':'task created new user'}
 
