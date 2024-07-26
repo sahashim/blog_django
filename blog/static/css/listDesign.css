@@ -9,7 +9,7 @@ body {
 	--l: 43%;
 	--brandColor: hsl(var(--h), 71%, var(--l));
 	font-family: Montserrat, sans-serif;
-	margin: 0;
+	margin: 1;
 	background-color: whitesmoke;
 }
 
