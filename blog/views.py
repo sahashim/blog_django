@@ -23,8 +23,8 @@ class PostListView(ListView):
 
     def get_queryset(self):
         category = (str(self.kwargs['slug']))
-	category = category..replace("-"," ")
-        return Post.objects.filter(category__title=category)
+        category1 = category.replace("-"," ")
+        return Post.objects.filter(category__title=category1)
 
 
 
